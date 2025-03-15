@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - ARTISOUL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(to bottom, #f4f4f9, #eaeafc);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #3c3c9e;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    header nav a:hover {
+      color: #ffdd57;
+    }
+    .services {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .service {
+      border: none;
+      border-radius: 15px;
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+    .service h2 {
+      font-size: 22px;
+      color: #3c3c9e;
+      margin-bottom: 10px;
+    }
+    .service p {
+      font-size: 16px;
+      color: #555;
+    }
+    .service a {
+      text-decoration: none;
+      color: #3c3c9e;
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .service a:hover {
+      color: #ffdd57;
+    }
+    footer {
+      background-color: #3c3c9e;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .service {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ARTISOUL</div>
+    <nav>
+      <a href="../index/index.html">Home</a>
+      <a href="../about/about.html">About</a>
+      <a id="logout-link" href="#">Logout</a>
+    </nav>
+  </header>
+
+  <section class="services">
+    <div class="service">
+      <a href="workshops.html">
+        <h2>Live Workshops</h2>
+        <p>Engage in interactive sessions with professional artists.</p>
+      </a>
+    </div>
+    <div class="service">
+      <a href="marketplace.html">
+        <h2>Marketplace</h2>
+        <p>Buy and sell unique handmade art worldwide.</p>
+      </a>
+    </div>
+    <div class="service">
+      <a href="certificate.html">
+        <h2>Certificate</h2>
+        <p>Receive a certificate of completion for workshops.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 ARTISOUL. All rights reserved.
+  </footer>
+
+  <script>
+    // Logout functionality
+    const logoutLink = document.getElementById('logout-link');
+
+    logoutLink.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default navigation
+      // Clear login status
+      localStorage.removeItem('isLoggedIn');
+      alert('You have been logged out.');
+      // Redirect to the login page
+      window.location.href = '../user/login.html';
+    });
+  </script>
+</body>
+</html>

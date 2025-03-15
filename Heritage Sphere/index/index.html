@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisoul</title>
+  <style>
+    /* Styling remains unchanged */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #4c00d2;
+      color: white;
+      overflow: hidden;
+    }
+    header {
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .container h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .container p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .buttons button {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .buttons button:hover {
+      background: white;
+      color: #4c00d2;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+    .shape:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 20%;
+      animation-duration: 8s;
+    }
+    .shape:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 70%;
+      animation-duration: 12s;
+    }
+    .shape:nth-child(3) {
+      width: 250px;
+      height: 250px;
+      top: 70%;
+      left: 30%;
+      animation-duration: 15s;
+    }
+    .shape:nth-child(4) {
+      width: 100px;
+      height: 100px;
+      top: 30%;
+      left: 80%;
+      animation-duration: 10s;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-30px) translateX(30px);
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ARTISOUL</h1>
+    <nav>
+      <a href="../index/index.html">Home</a>
+      <a href="../service/services.html">Services</a>
+      <a href="../about/about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <div class="container">
+    <h1>ARTISOUL</h1>
+    <p>Engage with Artists, Attend Workshops and Shop Handmade Art</p>
+    <div class="buttons">
+      <button onclick="location.href='../user/signup.html'">Sign Up</button>
+      <button onclick="location.href='../user/login.html'">Login</button>
+    </div>
+  </div>
+</body>
+</html>
