@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_DB: artisoul, POSTGRES_USER: artisoul, POSTGRES_PASSWORD: localdev }
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U artisoul"], interval: 5s, timeout: 5s, retries: 10 }
+  api:
+    build: ./backend
+    environment: { DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY:-localdev-change-me}", DEBUG: "1", DATABASE_URL: "postgres://artisoul:localdev@db:5432/artisoul", ALLOWED_HOSTS: "localhost,127.0.0.1,api" }
+    ports: ["8000:8000"]
+    depends_on: { db: { condition: service_healthy } }
+    command: sh -c "python manage.py makemigrations core && python manage.py migrate && python manage.py seed_demo && python manage.py runserver 0.0.0.0:8000"
+  web:
+    build: ./frontend
+    ports: ["5173:5173"]
+    depends_on: [api]
+volumes: { pgdata: {} }
