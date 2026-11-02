@@ -2,6 +2,8 @@
 
 Responsive React/Vite client with Django REST API, JWT auth, persistent learning, commerce and event models. Demo translation is explicitly simulated. No real payment or government certificate claim is made.
 
+The original static HTML prototype remains in `Heritage Sphere/` from the repository's existing history; the full-stack application in this directory is the expanded platform implementation.
+
 ## Local setup
 
 Requirements: Python 3.11+, Node 20+, npm. Django defaults to SQLite locally; Docker starts PostgreSQL.
